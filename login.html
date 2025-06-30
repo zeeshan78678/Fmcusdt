@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register - FMCUSdt</title>
+  <title>Login - FMCUSdt</title>
 </head>
 <body>
-  <h2>Register</h2>
+  <h2>Login</h2>
   <input type="email" id="email" placeholder="Enter email" /><br/><br/>
   <input type="password" id="password" placeholder="Enter password" /><br/><br/>
-  <button onclick="register()">Register</button>
+  <button onclick="login()">Login</button>
 
   <p id="msg"></p>
 
@@ -39,11 +39,11 @@
 
 
   <script type="module">
-    function register() {
+    function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      firebaseAuth.createUserWithEmailAndPassword(auth, email, password)
+      firebaseAuth.signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           window.location.href = "dashboard.html";
         })
